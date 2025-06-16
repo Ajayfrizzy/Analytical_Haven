@@ -14,7 +14,7 @@ const ServicesSlider = () => {
       image: projectmgt,
       title: "Project Management",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit nibh egestas ullamcorper ipsum nibh quis.",
+        "Stay oganized. Stay on track Turning plans into results, step by step."
     },
     {
       image: processdev,
@@ -177,11 +177,11 @@ const ServicesSlider = () => {
 
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
             <div>
-              <h1 className="text-[#FFFFFF] font-campton lg:mt-12 text-start">
+              <h1 className="text-[#FFFFFF] md:text-[1.5rem] text-[1.2rem] font-campton lg:mt-12 text-start">
                 Our Services
               </h1>
 
-              <h1 className="lg:text-4xl text-lg font-semibold font-campton text-[#FFFFFF] text-start mt-3">
+              <h1 className="lg:text-[2rem] text-[1.2rem] font-semibold font-campton text-[#FFFFFF] text-start mt-3">
                 Powerful Solutions to
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
