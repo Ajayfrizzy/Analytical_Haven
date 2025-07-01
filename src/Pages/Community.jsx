@@ -1,21 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Header from "../Header";
 import {
-  badge,
   communityhero,
   developer,
   help,
   learn,
   question,
-  t1,
-  testi3,
   testi4,
 } from "../assets";
 import BlueLine from "../assets/underblueline.svg";
 import OurCommunity from "../Components/OurCommunity";
 import { FaMessage } from "react-icons/fa6";
-import { FaSearch } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import Footer from "../Footer";
 import JoinSuccess from "../Components/JoinSuccess";
 
@@ -25,7 +20,7 @@ const Community = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowJoinSuccess(false);
-    }, 3000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -72,7 +67,7 @@ const Community = () => {
               />
             </div>
 
-            <p className="text-center lg:text-lg mx-auto font-campton mt-2">
+            <p className="text-center text-lg mx-auto font-campton mt-2 md:block hidden">
               Explore the community, find help in our Docs, and learn the art of
               digital excellence
             </p>
@@ -92,26 +87,6 @@ const Community = () => {
                 Subscribe
               </button>
             </div>
-
-            {/* Mobile view */}
-            <div className="md:hidden block mt-5">
-              <div className="relative flex items-center">
-                <FaSearch className="absolute left-3 text-black-500 text-lg" />
-                <input
-                  type="text"
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#193D6F] focus:border-transparent focus:outline focus:outline-2 focus:outline-gray-300 placeholder-gray-500"
-                  placeholder="Search the community"
-                  aria-label="Search community"
-                  required
-                />
-              </div>
-
-              <div className="text-center mt-3">
-                <button className="text-[#fff] bg-[#193D6F] w-[100%] text-sm px-6 py-3 rounded-lg active:scale-95 font-campton">
-                  Discover
-                </button>
-              </div>
-            </div>
           </div>
 
           <div className="max-w-7xl mx-auto justify-center lg:p-8 p-5 -mt-5">
@@ -119,6 +94,11 @@ const Community = () => {
               <img src={communityhero} alt="" />
             </div>
           </div>
+
+          <p className="text-center font-campton md:hidden block p-5">
+            Explore the community, find help in our Docs, and learn the art of
+            digital excellence
+          </p>
 
           <div>
             <OurCommunity />
@@ -130,7 +110,11 @@ const Community = () => {
             </h1>
             <div className="flex justify-between gap-5 lg:flex-row flex-col mt-10">
               <div className="bg-[#fdebff] p-7 border-[#878787] border rounded-xl">
-                <img src={question} alt="" className="flex justify-center mx-auto" />
+                <img
+                  src={question}
+                  alt=""
+                  className="flex justify-center mx-auto"
+                />
                 <div>
                   <h1 className="lg:text-lg font-campton font-semibold text-center">
                     Ask the Community
@@ -141,7 +125,11 @@ const Community = () => {
                 </div>
               </div>
               <div className="bg-[#fdf7f8] p-7 border-[#878787] border rounded-xl">
-                <img src={help} alt="" className="flex justify-center mx-auto" />
+                <img
+                  src={help}
+                  alt=""
+                  className="flex justify-center mx-auto"
+                />
                 <div>
                   <h1 className="lg:text-lg font-campton font-semibold text-center">
                     Help others
@@ -152,7 +140,11 @@ const Community = () => {
                 </div>
               </div>
               <div className="bg-[#e6f5fe] p-7 border-[#878787] border rounded-xl">
-                <img src={learn} alt="" className="flex justify-center mx-auto" />
+                <img
+                  src={learn}
+                  alt=""
+                  className="flex justify-center mx-auto"
+                />
                 <div>
                   <h1 className="lg:text-lg font-campton font-semibold text-center">
                     Learn a Skill
@@ -163,7 +155,11 @@ const Community = () => {
                 </div>
               </div>
               <div className="bg-[#ebf2ec] p-7 border-[#878787] border rounded-xl">
-                <img src={developer} alt="" className="flex justify-center mx-auto" />
+                <img
+                  src={developer}
+                  alt=""
+                  className="flex justify-center mx-auto"
+                />
                 <div>
                   <h1 className="lg:text-lg font-campton font-semibold text-center">
                     Developer's Zone
@@ -173,214 +169,6 @@ const Community = () => {
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div className="max-w-7xl mx-auto lg:p-[8] p-5 lg:mt-20 mt-10 md:block hidden">
-            <div className="grid lg:grid-cols-2 lg:gap-20 gap-10">
-              <div className="space-y-10">
-                <h1 className="text-[#050B15] font-campton font-semibold lg:text-3xl text-xl">
-                  Featured Conversation
-                </h1>
-                <div className="lg:space-y-12 space-y-5">
-                  <div className="border-[#878787] border rounded-xl p-10 space-y-4 lg:text-lg text-sm">
-                    <div className="flex items-center gap-5">
-                      <img src={t1} alt="" className="lg:w-fit w-16"/>
-                      <div>
-                        <h1 className="font-campton font-semibold">
-                          Opeyemi Ojo{" "}
-                          <span className="font-normal text-sm bg-[#DCDCDC] p-1 rounded-md">
-                            Level 4
-                          </span>
-                        </h1>
-                        <p>Lagos, Nigeria</p>
-                      </div>
-                    </div>
-                    <h1 className="lg:text-xl font-campton font-semibold">
-                      Data Analysis or Data Analytics - Which is correct?
-                    </h1>
-                    <p className="text-gray-600 font-campton lg:text-lg">
-                      It is a long established fact that a reader will be distracted
-                      by the readable content of a page when looking at its layout.
-                      The point of using Lorem Ipsum is that it has a more-or-less
-                      normal distribution of letters, as opposed to using...{" "}
-                      <a href="" className="underline font-semibold">
-                        View Replies
-                      </a>
-                    </p>
-                  </div>
-
-                  <div className="border-[#878787] border rounded-xl p-10 space-y-4 lg:text-lg text-sm">
-                    <div className="flex items-center gap-5">
-                      <img src={t1} alt="" className="lg:w-fit w-16"/>
-                      <div>
-                        <h1 className="lg:text-lg font-campton font-semibold">
-                          Opeyemi Ojo{" "}
-                          <span className="font-normal text-sm bg-[#DCDCDC] p-1 rounded-md">
-                            Level 4
-                          </span>
-                        </h1>
-                        <p>Lagos, Nigeria</p>
-                      </div>
-                    </div>
-                    <h1 className="lg:text-xl font-campton font-semibold">
-                      Data Analysis or Data Analytics - Which is correct?
-                    </h1>
-                    <p className="text-gray-600 font-campton lg:text-lg">
-                      It is a long established fact that a reader will be distracted
-                      by the readable content of a page when looking at its layout.
-                      The point of using Lorem Ipsum is that it has a more-or-less
-                      normal distribution of letters, as opposed to using...{" "}
-                      <a href="" className="underline font-semibold">
-                        View Replies
-                      </a>
-                    </p>
-                  </div>
-
-                  <div className="border-[#878787] border rounded-xl p-10 space-y-4 lg:text-lg text-sm">
-                    <div className="flex items-center gap-5">
-                      <img src={t1} alt="" className="lg:w-fit w-16"/>
-                      <div>
-                        <h1 className="lg:text-lg font-campton font-semibold">
-                          Opeyemi Ojo{" "}
-                          <span className="font-normal text-sm bg-[#DCDCDC] p-1 rounded-md">
-                            Level 4
-                          </span>
-                        </h1>
-                        <p>Lagos, Nigeria</p>
-                      </div>
-                    </div>
-                    <h1 className="lg:text-xl font-campton font-semibold">
-                      Data Analysis or Data Analytics - Which is correct?
-                    </h1>
-                    <p className="text-gray-600 font-campton lg:text-lg">
-                      It is a long established fact that a reader will be distracted
-                      by the readable content of a page when looking at its layout.
-                      The point of using Lorem Ipsum is that it has a more-or-less
-                      normal distribution of letters, as opposed to using...{" "}
-                      <a href="" className="underline font-semibold">
-                        View Replies
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-10 lg:text-lg text-sm">
-                <h1 className="text-[#050B15] font-campton font-semibold lg:text-3xl text-xl">
-                  Top Contributors
-                </h1>
-                <div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-7">
-                      <h1 className="font-campton font-semibold text-gray-600 lg:text-lg">
-                        1
-                      </h1>
-                      <div className="flex items-center gap-3">
-                        <img src={testi3} alt="" />
-                        <div>
-                          <h1 className="font-campton font-semibold">
-                            Opeyemi Ojo
-                          </h1>
-                          <p className="text-gray-600 font-campton">3 points</p>
-                        </div>
-                      </div>
-                    </div>
-                    <img src={badge} alt="" />
-                  </div>
-                  <h1 className="border mt-2"></h1>
-                </div>
-
-                <div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-7">
-                      <h1 className="font-campton font-semibold text-gray-600 lg:text-lg">
-                        2
-                      </h1>
-                      <div className="flex items-center gap-3">
-                        <img src={testi3} alt="" />
-                        <div>
-                          <h1 className="font-campton font-semibold">
-                            Elijah Osasu
-                          </h1>
-                          <p className="text-gray-600 font-campton">3 points</p>
-                        </div>
-                      </div>
-                    </div>
-                    <img src={badge} alt="" />
-                  </div>
-                  <h1 className="border mt-2"></h1>
-                </div>
-
-                <div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-7">
-                      <h1 className="font-campton font-semibold text-gray-600 lg:text-lg">
-                        3
-                      </h1>
-                      <div className="flex items-center gap-3">
-                        <img src={testi3} alt="" />
-                        <div>
-                          <h1 className="font-campton font-semibold">
-                            Fatima Faith
-                          </h1>
-                          <p className="text-gray-600 font-campton">3 points</p>
-                        </div>
-                      </div>
-                    </div>
-                    <img src={badge} alt="" />
-                  </div>
-                  <h1 className="border mt-2"></h1>
-                </div>
-
-                <div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-7">
-                      <h1 className="font-campton font-semibold text-gray-600 lg:text-lg">
-                        4
-                      </h1>
-                      <div className="flex items-center gap-3">
-                        <img src={testi3} alt="" />
-                        <div>
-                          <h1 className="font-campton font-semibold">
-                            Queen Queen
-                          </h1>
-                          <p className="text-gray-600 font-campton">3 points</p>
-                        </div>
-                      </div>
-                    </div>
-                    <img src={badge} alt="" />
-                  </div>
-                  <h1 className="border mt-2"></h1>
-                </div>
-
-                <div>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-7">
-                      <h1 className="font-campton font-semibold text-gray-600 lg:text-lg">
-                        5
-                      </h1>
-                      <div className="flex items-center gap-3">
-                        <img src={testi3} alt="" />
-                        <div>
-                          <h1 className="font-campton font-semibold">
-                            Opeyemi Ojo
-                          </h1>
-                          <p className="text-gray-600 font-campton">3 points</p>
-                        </div>
-                      </div>
-                    </div>
-                    <img src={badge} alt="" />
-                  </div>
-                  <h1 className="border mt-2"></h1>
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:text-lg text-sm underline mt-7">
-              <Link to="#" className="font-campton text-center text-[#193d6f]">
-                See More
-              </Link>
             </div>
           </div>
 
@@ -394,7 +182,8 @@ const Community = () => {
                 <div className="flex items-center gap-5">
                   <img src={testi4} alt="" />
                   <h1 className="font-campton text-gray-600 lg:text-lg pr-3 md:pr-0">
-                    What is the difference between a UI designer and a UX designer?
+                    What is the difference between a UI designer and a UX
+                    designer?
                   </h1>
                 </div>
                 <div className="flex items-center gap-1">
@@ -458,7 +247,8 @@ const Community = () => {
                 <div className="flex items-center gap-5">
                   <img src={testi4} alt="" />
                   <h1 className="font-campton text-gray-600 lg:text-lg pr-3 md:pr-0">
-                    Is Remote Work & Freelancing the best form of working in 2025?
+                    Is Remote Work & Freelancing the best form of working in
+                    2025?
                   </h1>
                 </div>
                 <div className="flex items-center gap-1">
@@ -528,7 +318,7 @@ const Community = () => {
               <details className="group [&_summary::-webkit-details-marker]:hidden border-b border-[#BDBDBD] lg:mt-10 mt-5">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5 pb-6 text-gray-900">
                   <h2 className="lg:text-lg font-campton text-gray-600 flex items-center gap-3">
-                    <span>1.</span>What is this community about?
+                    <span>1.</span>What is this Community about?
                   </h2>
 
                   <svg
@@ -548,17 +338,22 @@ const Community = () => {
                 </summary>
 
                 <p className="mt-4 text-sm md:text-lg leading-relaxed text-gray-600 font-campton">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic
-                  veritatis molestias culpa in, recusandae laboriosam neque aliquid
-                  libero nesciunt voluptate dicta quo officiis explicabo
-                  consequuntur distinctio corporis earum similique!
+                  Analytica Haven is a community for professionals,newbies to
+                  connect, collaborate, and grow. We help members refine their
+                  career paths, elevate their professional brands, and access
+                  opportunities like job offers, masterclasses, and a dynamic
+                  learning hub. At Analytica Haven, we don’t just build careers,
+                  we build confidence, competence, and community. We also create
+                  a safe space where ambition meets opportunity, and every
+                  member is supported to reach their full potential. Join us and
+                  take the next bold step in your professional journey.
                 </p>
               </details>
 
               <details className="group [&_summary::-webkit-details-marker]:hidden border-b border-[#BDBDBD]">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5 pb-6 text-gray-900">
                   <h2 className="lg:text-lg font-campton text-gray-600 flex items-center gap-3">
-                    <span>2.</span>How can i feature my business or services?
+                    <span>2.</span>How can I feature my business or services?
                   </h2>
 
                   <svg
@@ -578,10 +373,12 @@ const Community = () => {
                 </summary>
 
                 <p className="mt-4 text-sm md:text-lg leading-relaxed text-gray-600 font-campton">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic
-                  veritatis molestias culpa in, recusandae laboriosam neque aliquid
-                  libero nesciunt voluptate dicta quo officiis explicabo
-                  consequuntur distinctio corporis earum similique!
+                  Thank you for your interest in showcasing your business within
+                  the Analytica Haven community! We offer several opportunities
+                  for brands, startups, and service providers to connect with
+                  our vibrant network of professionals and aspiring talents.
+                  such as Community Spotlight, Partner with Us, Advertise in the
+                  Learning Hub, Sponsor an Event, Showcase Your Product or Story
                 </p>
               </details>
 
@@ -608,17 +405,20 @@ const Community = () => {
                 </summary>
 
                 <p className="mt-4 text-sm md:text-lg leading-relaxed text-gray-600 font-campton">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic
-                  veritatis molestias culpa in, recusandae laboriosam neque aliquid
-                  libero nesciunt voluptate dicta quo officiis explicabo
-                  consequuntur distinctio corporis earum similique!
+                  Yes, Analytica Haven offers mentorship and coaching through
+                  one-on-one guidance, group sessions, and expert-led
+                  masterclasses. Whether you're just starting out or looking to
+                  grow professionally, we connect you with mentors, peer support
+                  groups, and practical learning opportunities to help you build
+                  confidence, sharpen your skills, and achieve your career
+                  goals.
                 </p>
               </details>
 
               <details className="group [&_summary::-webkit-details-marker]:hidden border-b border-[#BDBDBD]">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5 pb-6 text-gray-900">
                   <h2 className="lg:text-lg font-campton text-gray-600 flex items-center gap-3">
-                    <span>4.</span>How can i collaborate with the community?
+                    <span>4.</span>How can I collaborate with the community?
                   </h2>
 
                   <svg
@@ -638,17 +438,17 @@ const Community = () => {
                 </summary>
 
                 <p className="mt-4 text-sm md:text-lg leading-relaxed text-gray-600 font-campton">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic
-                  veritatis molestias culpa in, recusandae laboriosam neque aliquid
-                  libero nesciunt voluptate dicta quo officiis explicabo
-                  consequuntur distinctio corporis earum similique!
+                  To collaborate, just send us a message with what you have in
+                  mind, and we’ll explore the best way to work together. We’re
+                  always open to partnerships that align with growth, learning,
+                  and community support.
                 </p>
               </details>
 
               <details className="group [&_summary::-webkit-details-marker]:hidden border-b border-[#BDBDBD]">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5 pb-6 text-gray-900">
                   <h2 className="lg:text-lg font-campton text-gray-600 flex items-center gap-3">
-                    <span>5.</span>What king of content can i expect?
+                    <span>5.</span>What kind of content can I expect?
                   </h2>
 
                   <svg
@@ -668,17 +468,21 @@ const Community = () => {
                 </summary>
 
                 <p className="mt-4 text-sm md:text-lg leading-relaxed text-gray-600 font-campton">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic
-                  veritatis molestias culpa in, recusandae laboriosam neque aliquid
-                  libero nesciunt voluptate dicta quo officiis explicabo
-                  consequuntur distinctio corporis earum similique!
+                  At Analytica Haven, you can expect a rich mix of content
+                  focused on career growth, data and tech skills, and
+                  professional development. This includes masterclasses, job
+                  alerts, mentorship tips, tool tutorials (like Excel, Ai
+                  masterclass, Ui/Ux, Graphics Design), resume and branding
+                  advice, industry insights, and community spotlights. Whether
+                  you’re a newbie or a pro, there’s always something to learn,
+                  apply, and grow from.
                 </p>
               </details>
 
               <details className="group [&_summary::-webkit-details-marker]:hidden border-b border-[#BDBDBD]">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5 pb-6 text-gray-900">
                   <h2 className="lg:text-lg font-campton text-gray-600 flex items-center gap-3">
-                    <span>6.</span>Who is the community for?
+                    <span>6.</span>Who is the Community for?
                   </h2>
 
                   <svg
@@ -698,17 +502,17 @@ const Community = () => {
                 </summary>
 
                 <p className="mt-4 text-sm md:text-lg leading-relaxed text-gray-600 font-campton">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic
-                  veritatis molestias culpa in, recusandae laboriosam neque aliquid
-                  libero nesciunt voluptate dicta quo officiis explicabo
-                  consequuntur distinctio corporis earum similique!
+                  Analytica Haven is for students, job seekers, career
+                  switchers, and professionals in data, tech, and business who
+                  want to learn, grow, and connect. If you're ambitious and
+                  ready to level up, this community is for you.
                 </p>
               </details>
 
               <details className="group [&_summary::-webkit-details-marker]:hidden border-b border-[#BDBDBD]">
                 <summary className="flex cursor-pointer items-center justify-between gap-1.5 pb-6 text-gray-900">
                   <h2 className="lg:text-lg font-campton text-gray-600 flex items-center gap-3">
-                    <span>7.</span>How can i join the community?
+                    <span>7.</span>How can I join the Community?
                   </h2>
 
                   <svg
@@ -728,10 +532,10 @@ const Community = () => {
                 </summary>
 
                 <p className="mt-4 text-sm md:text-lg leading-relaxed text-gray-600 font-campton">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic
-                  veritatis molestias culpa in, recusandae laboriosam neque aliquid
-                  libero nesciunt voluptate dicta quo officiis explicabo
-                  consequuntur distinctio corporis earum similique!
+                  You can join the Analytica Haven community by filling out our
+                  registration form or connecting through our official platforms
+                  (like WhatsApp, Telegram, or LinkedIn). Just send a message or
+                  click the join link, and you'll be added to the right group.
                 </p>
               </details>
 
@@ -758,10 +562,11 @@ const Community = () => {
                 </summary>
 
                 <p className="mt-4 text-sm md:text-lg leading-relaxed text-gray-600 font-campton">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic
-                  veritatis molestias culpa in, recusandae laboriosam neque aliquid
-                  libero nesciunt voluptate dicta quo officiis explicabo
-                  consequuntur distinctio corporis earum similique!
+                  Yes, it is free to join the Analytica Haven community! You’ll
+                  get access to career resources, events, and learning
+                  opportunities at no cost. However, some premium sessions or
+                  programs may require a small fee — but general membership is
+                  completely free.
                 </p>
               </details>
             </div>
